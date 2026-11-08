@@ -1,0 +1,80 @@
+/* Hero-Varianten (zur Auswahl, 08.11.) */
+.hv{position:relative;color:#fff;overflow:hidden}
+.hv h1{color:#fff;font-weight:600;margin:0 0 .45em;letter-spacing:-.01em}
+.hv p.satz{font-size:1.2em;line-height:1.55;color:#e6ebf3;max-width:34em;margin:0 0 1.8em}
+.hv .aktionen{display:flex;flex-wrap:wrap;align-items:center;gap:14px 28px}
+.hv .aktionen .knopf{background:var(--gold);color:var(--navy-3);font-size:1.12em;min-height:54px;padding:.6em 1.5em}
+.hv .aktionen .knopf:hover{background:#e7b85a}
+.hv .aktionen .lnk{color:#fff;font-weight:650;text-decoration:none;border-bottom:2px solid rgba(255,255,255,.45);padding-bottom:2px}
+.hv .aktionen .lnk:hover{border-color:var(--gold);color:#fff}
+.hv .credit{position:absolute;right:14px;bottom:10px;font-size:.72rem;color:rgba(255,255,255,.72);z-index:3}
+.hv .credit a{color:inherit}
+.hv .bildzeile{font-size:.82rem;color:var(--hell);margin-top:2.4em}
+
+/* A: Team am Eingang, geteilt */
+.hv-a{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);min-height:min(80vh,680px);background:var(--navy)}
+.hv-a .text{padding:72px 56px 64px max(24px,calc((100vw - 1320px)/2 + 24px));display:flex;flex-direction:column;justify-content:center}
+.hv-a h1{font-size:clamp(2.2rem,3.6vw,3.3rem);line-height:1.12}
+.hv-a figure{margin:0;position:relative}
+.hv-a figure img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:28% 35%}
+.hv-a figure::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(44,59,85,.35),rgba(44,59,85,0) 22%)}
+
+/* B: Burgsteinfurt von oben */
+.hv-b{min-height:min(84vh,740px);display:flex;align-items:center;background:#1b2539}
+.hv-b picture,.hv-b picture img{position:absolute;inset:0;width:100%;height:100%}
+.hv-b picture img{object-fit:cover;object-position:62% 50%}
+.hv-b::before{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(90deg,rgba(20,28,44,.93) 0%,rgba(20,28,44,.84) 36%,rgba(20,28,44,.35) 56%,rgba(20,28,44,0) 74%)}
+.hv-b .text{position:relative;z-index:2;max-width:1320px;width:100%;margin:0 auto;padding:80px 24px}
+.hv-b .text>*{max-width:520px}
+.hv-b h1{font-size:clamp(2.4rem,4.4vw,3.9rem);line-height:1.08}
+
+/* C: Bibliothek, dunkel */
+.hv-c{min-height:min(84vh,740px);display:flex;align-items:flex-end;background:#11161f}
+.hv-c>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:60% 50%;filter:saturate(.8)}
+.hv-c::before{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(0deg,rgba(14,18,27,.94) 0%,rgba(14,18,27,.7) 42%,rgba(14,18,27,.25) 100%)}
+.hv-c .text{position:relative;z-index:2;max-width:1320px;width:100%;margin:0 auto;padding:120px 24px 72px;display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:48px;align-items:end}
+.hv-c h1{font-size:clamp(3rem,7vw,6.4rem);line-height:.98;font-weight:500;margin:0}
+.hv-c h1 em{font-style:normal;font-weight:300;color:#dfe5ee}
+.hv-c p.satz{margin-bottom:1.4em}
+.hv-c .namen{grid-column:1/-1;border-top:1px solid rgba(255,255,255,.18);padding-top:16px;display:flex;flex-wrap:wrap;gap:6px 36px;color:var(--hell);font-size:.98em}
+.hv-c .namen b{color:#fff;font-weight:600}
+
+/* Wege-Leiste unter jedem Hero */
+.wegeleiste{background:#fff;border-bottom:1px solid var(--linie)}
+.wegeleiste ul{list-style:none;margin:0 auto;padding:0 24px;max-width:1320px;display:grid;grid-template-columns:repeat(3,1fr)}
+.wegeleiste li+li{border-left:1px solid var(--linie)}
+.wegeleiste a{display:block;padding:26px 28px 24px;text-decoration:none;color:var(--tinte);transition:background .25s}
+.wegeleiste li:first-child a{padding-left:0}
+.wegeleiste a:hover{background:var(--flaeche)}
+.wegeleiste b{display:flex;justify-content:space-between;font:600 1.3rem "Literata",Georgia,serif;color:var(--navy);margin-bottom:.2em}
+.wegeleiste b::after{content:"→";color:var(--gold-dunkel);font-family:"Source Sans 3",sans-serif;transition:transform .25s}
+.wegeleiste a:hover b::after{transform:translateX(4px)}
+.wegeleiste span{color:var(--grau);font-size:.98em}
+
+@media (max-width:1080px){
+  .hv-a{grid-template-columns:1fr}
+  .hv-a figure{order:-1;aspect-ratio:3/2}
+  .hv-a figure::after{display:none}
+  .hv-a .text{padding:40px 24px 48px}
+  .hv-c .text{grid-template-columns:1fr;gap:20px}
+}
+@media (max-width:760px){
+  .hv-a .text{padding:30px 18px 40px}
+  .hv-a h1{font-size:2.05rem}
+  .hv p.satz{font-size:1.08em;margin-bottom:1.4em}
+  .hv-b{display:block;min-height:0}
+  .hv-b picture{position:relative;display:block;height:auto}
+  .hv-b picture img{position:static;height:auto;aspect-ratio:1100/792}
+  .hv-b::before{display:none}
+  .hv-b .text{padding:30px 18px 40px;background:#1b2539}
+  .hv-b h1{font-size:2.15rem}
+  .hv .credit{position:static;display:block;padding:6px 18px 0;background:#1b2539;text-align:right}
+  .hv-c{min-height:640px}
+  .hv-c .text{padding:120px 18px 40px}
+  .hv-c h1{font-size:3rem}
+  .wegeleiste ul{grid-template-columns:1fr;padding:0 18px}
+  .wegeleiste li+li{border-left:0;border-top:1px solid var(--linie)}
+  .wegeleiste a,.wegeleiste li:first-child a{padding:18px 0}
+}
+
+.hv-b p.satz{max-width:26em}
